@@ -26,7 +26,7 @@ def play():
 
     while turnsRemaining > 0:
         print(str(turnsRemaining) + " turns remaining.") #state number of turns remaining
-        print(name)
+        #print(name) #can uncomment to see the solution
         guess = list(input("Guess the NBA player: ").lower()) #take guess into a list
         print("")
         if len(guess) != 5: #check that guess has 5 letters
