@@ -25,10 +25,14 @@ def play():
     turnsRemaining = 5
 
     while turnsRemaining > 0:
+        #print(name) #remove comment to view solution
+        #print(possibleNames) #remove to view all possible names
+        
         print(str(turnsRemaining) + " turns remaining.") #state number of turns remaining
-        #print(name) #can uncomment to see the solution
         guess = list(input("Guess the NBA player: ").lower()) #take guess into a list
-        print("")
+        print("****************************************************************************************")
+        hint = ["X", "X", "X", "X", "X"]
+
         if len(guess) != 5: #check that guess has 5 letters
             print("List a 5-letter last name!")
             continue
@@ -43,17 +47,15 @@ def play():
         
         #if guess is incorrect, give hints on correct name, and decrease turns remaining
         else:
-            noLettersGuessed = True
             for i in range(5):
                 if guess[i] == name[i]:
-                    print(guess[i] + " is in the correct position (letter #" + str(i+1) + ")")
-                    noLettersGuessed = False
-                elif guess[i] in name:
-                    print(guess[i] + " is in the name but in the wrong position (letter #" + str(i+1) + ")")
-                    noLettersGuessed = False
-            if noLettersGuessed == True:
-                print("No letters found in any spot")
+                    hint[i] = "1"
 
+                elif guess[i] in name:
+                    hint[i] = "0"
+
+            print("Guess: " + listToString(guess))
+            print("Hint:  " + listToString(hint))
             turnsRemaining -= 1
     
     #if user runs out of guesses, give them the solution
@@ -71,10 +73,21 @@ while True:
     print("")
     answer = input("Do you want to play NBA Wordle? Type 'Y' for yes, or 'N' for no, or 'R' for rules: ").lower()
     if answer == 'r':
+        print("****************************************************************************************")
+        print("Guess the NBA player last name within your first 5 tries. The name has 5 letters in it.")
+        print("After guessing, you will be given a hint which shows whether your guess had in the \
+right position or wrong position.")
+        print("Your hints will either be an 'X', '0' or '1':")
+        print("'1' means the letter is in the word and in the correct spot.")
+        print("'0' means the letter is in the word but in the incorrect spot.")
+        print("'X' means that the letter is not in the word in any spot.")
         print("")
-        print("Guess the NBA player last name within your first 5 tries. The name has 5 letters in it")
-        print("You will be told if the letters you guess are in the right position or if they are in the wrong position")
-        print("Hint: The player must be an active player in the NBA right now. \
+        print("For example, say the solution is Stephen 'Curry' and your guess is Birch, \
+your hint would look as follows:")
+        print("Solution: curry")
+        print("Guess:    birch") 
+        print("Hint:     XX10X")
+        print("Another Hint: The player must be an active player in the NBA right now. \
 Search nba.com/players for all possible players.")
     elif answer == 'y':
         play()
@@ -82,3 +95,5 @@ Search nba.com/players for all possible players.")
         break
     else:
         print("Please choose a valid option.")
+
+exit()
