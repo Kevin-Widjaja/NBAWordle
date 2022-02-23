@@ -81,4 +81,4 @@ Search nba.com/players for all possible players.")
     elif answer == 'n':
         break
     else:
-        print("Don't understand")
+        print("Please choose a valid option.")
