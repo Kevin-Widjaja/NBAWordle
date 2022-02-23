@@ -2,6 +2,18 @@ This is an NBA version of Wordle.
 
 It pulls all the names of active NBA players from basketball.realgm.com/nba/players as possible solutions. 
 
-The goal of this game is to guess the NBA player's last name within 5 guesses, and after each guess, you are given hints. 
+The goal of this game is to guess the NBA player's last name within 5 guesses, and after each guess, 
+you are given hints. 
 
-For example, if the solution is Stephen "Curry" and you guess Ayton, your hint will say that none of the letters that you guessed are in the solution since Ayton does not share any letters in common with Curry. If you guess Birch, your hint will say that the letter "R" is in the correct position, but "C" is in the name but in the wrong position. 
+Your hints will either be an 'X', '0' or '1'. 
+'1' means the letter is in the word and in the correct spot.
+'0' means the letter is in the word but in the incorrect spot.
+'X' means that the letter is not in the word in any spot.
+
+For example, say the solution is Stephen "Curry" and your guess is Birch, your hint would look as follows:
+
+Solution: curry
+Guess:    birch
+Hint:     XX10X
+
+Use the hints to guess the NBA player to win the game.
