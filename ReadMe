@@ -4,6 +4,4 @@ It pulls all the names of active NBA players from basketball.realgm.com/nba/play
 
 The goal of this game is to guess the NBA player's last name within 5 guesses, and after each guess, you are given hints. 
 
-For example, if the solution is Stephen "Curry" and you guess Ayton, your hint will say that none of the letters that you guessed are in the solution
-since Ayton does not share any letters in common with Curry. If you guess Birch, your hint will say that the letter "R" is in the correct position, 
-but "C" is in the name but in the wrong position. 
+For example, if the solution is Stephen "Curry" and you guess Ayton, your hint will say that none of the letters that you guessed are in the solution since Ayton does not share any letters in common with Curry. If you guess Birch, your hint will say that the letter "R" is in the correct position, but "C" is in the name but in the wrong position. 
